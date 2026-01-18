@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream-50 text-silver-900;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-500;
+  }
+
+  ::selection {
+    @apply bg-gold-200 text-silver-900;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-silver-900 text-white font-semibold rounded-full;
+    @apply hover:bg-silver-800 transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-silver-900 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-silver-900 font-semibold rounded-full;
+    @apply border border-silver-200 hover:border-silver-300 hover:bg-cream-50 transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-silver-900 focus:ring-offset-2;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3;
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold rounded-full;
+    @apply hover:from-gold-600 hover:to-gold-700 transition-all duration-300;
+    @apply shadow-lg;
+  }
+
+  .card-luxury {
+    @apply bg-white rounded-2xl shadow-soft;
+    @apply border border-silver-100;
+    @apply transition-all duration-300;
+    @apply hover:shadow-elegant hover:border-silver-200;
+  }
+
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full;
+  }
+
+  .badge-new {
+    @apply bg-silver-900 text-white;
+  }
+
+  .badge-sale {
+    @apply bg-red-500 text-white;
+  }
+
+  .badge-bestseller {
+    @apply bg-gold-500 text-white;
+  }
+
+  .input-luxury {
+    @apply w-full px-4 py-3 bg-white border border-silver-200 rounded-xl;
+    @apply text-silver-900 placeholder:text-silver-400;
+    @apply focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20;
+    @apply transition-all duration-200;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg;
+  }
+
+  .glass-dark {
+    @apply bg-silver-900/80 backdrop-blur-lg;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .img-loading {
+    @apply bg-silver-100 animate-pulse;
+  }
+
+  .line-gold {
+    @apply h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent;
+  }
+
+  .aspect-product {
+    aspect-ratio: 3/4;
+  }
+
+  .aspect-banner {
+    aspect-ratio: 21/9;
+  }
+
+  .overlay-gradient-dark {
+    @apply bg-gradient-to-t from-black/60 via-black/20 to-transparent;
+  }
+
+  .overlay-gradient-light {
+    @apply bg-gradient-to-t from-white/80 via-white/40 to-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfcfa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 5px;
+  border: 2px solid #fdfcfa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #fdfcfa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

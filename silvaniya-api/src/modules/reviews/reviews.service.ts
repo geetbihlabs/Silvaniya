@@ -1,0 +1,9 @@
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from '../../prisma/prisma.service';
+
+@Injectable()
+export class ReviewsService {
+  constructor(private prisma: PrismaService) {}
+  
+  async getByProduct(productId: string) { return []; }
+}
